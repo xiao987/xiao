@@ -47,7 +47,7 @@ function reduce($a,$b)
 $my_array = array("Dog","Cat","Horse");
 list($a,$b,$c) = $my_array;
 //echo $a.$b.$c;
-//--------------------(10)
+
 
 
 
