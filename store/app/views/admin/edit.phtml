@@ -1,0 +1,147 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["admin", "Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Edit admin
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "admin/save",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldUsername" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["username", "size" => 30, "class" => "form-control", "id" => "fieldUsername"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["password", "size" => 30, "class" => "form-control", "id" => "fieldPassword"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSalt" class="col-sm-2 control-label">Salt</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->selectStatic(["salt", [], "class" => "form-control", "id" => "fieldSalt"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldRealname" class="col-sm-2 control-label">Realname</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["realname", "size" => 30, "class" => "form-control", "id" => "fieldRealname"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPhoneNumber" class="col-sm-2 control-label">Phone Of Number</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["phone_number", "size" => 30, "class" => "form-control", "id" => "fieldPhoneNumber"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldIntro" class="col-sm-2 control-label">Intro</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["intro", "size" => 30, "class" => "form-control", "id" => "fieldIntro"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldStatus" class="col-sm-2 control-label">Status</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["status", "type" => "number", "class" => "form-control", "id" => "fieldStatus"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCreater" class="col-sm-2 control-label">Creater</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["creater", "type" => "number", "class" => "form-control", "id" => "fieldCreater"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCreateIp" class="col-sm-2 control-label">Create Of Ip</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["create_ip", "size" => 30, "class" => "form-control", "id" => "fieldCreateIp"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCreateTime" class="col-sm-2 control-label">Create Of Time</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["create_time", "type" => "number", "class" => "form-control", "id" => "fieldCreateTime"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldUpdater" class="col-sm-2 control-label">Updater</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["updater", "type" => "number", "class" => "form-control", "id" => "fieldUpdater"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldUpdateTime" class="col-sm-2 control-label">Update Of Time</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["update_time", "type" => "number", "class" => "form-control", "id" => "fieldUpdateTime"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldRoleId" class="col-sm-2 control-label">Role</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["role_id", "type" => "number", "class" => "form-control", "id" => "fieldRoleId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldGrade" class="col-sm-2 control-label">Grade</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["grade", "type" => "number", "class" => "form-control", "id" => "fieldGrade"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["email", "size" => 30, "class" => "form-control", "id" => "fieldEmail"]) ?>
+    </div>
+</div>
+
+
+<?php echo $this->tag->hiddenField("id") ?>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
