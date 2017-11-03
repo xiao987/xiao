@@ -8,3 +8,16 @@ no
 8558
 yesok
 
+ $this -> validator -> add_rule('title', 'required', '请填写角色名称');
+        $this -> validator -> add_rule('description', 'required', '请填写角色描述');
+        /** 截获验证异常 */
+        if ($error = $this -> validator -> run(array(
+            'title' => $title,
+            'description' => $description,
+        ))) {
+            $error = array_values($error);
+            $error = $error[0];
+            $this->flashSession->error($error['message']);
+            return $this->redirect();
+        }
+
